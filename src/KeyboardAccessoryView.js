@@ -81,7 +81,7 @@ class KeyboardAccessoryView extends Component {
     }
 
     const keyboardHeight = Platform.select({
-      ios: keyboardEvent.endCoordinates.height,
+      ios: keyboardEvent.endCoordinates.height > 0 ? keyboardEvent.endCoordinates.height : 23,
       android: this.props.androidAdjustResize
         ? 0
         : keyboardEvent.endCoordinates.height
